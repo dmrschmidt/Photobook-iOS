@@ -29,12 +29,11 @@
 
 import UIKit
 
-@objc public protocol Product: NSCoding {
+@objc public protocol Product: NSCoding, NSObjectProtocol {
     var selectedShippingMethod: ShippingMethod? { get set }
     var identifier: String { get }
     var itemCount: Int { get set }
     var template: Template { get }
-    var hashValue: Int { get }
     func assetsToUpload() -> [PhotobookAsset]?
     func orderParameters() -> [String: Any]?
     func costParameters() -> [String: Any]?
